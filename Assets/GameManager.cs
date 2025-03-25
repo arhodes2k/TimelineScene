@@ -1,21 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
 
+[SerializeField] AudioSource audioSource;
+    [SerializeField] PlayableDirector director;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
- 
+    void Start() {
+        director.Play();
+        audioSource.Play();  // Ensures playback in case Timeline fails
     }
 }
